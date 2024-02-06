@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Dog Search</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+  body{
+    background-color:aliceblue;
+    color: black
+  }
+ .dog-pic{ 
+    /* border: 5px dashed orange;  */
+    border-radius: 25px;
+    width: 600px;
+    height: 100%;
+    position: relative;
+    object-fit: cover;
+    margin-left: 400px; 
+    margin-top: -200px; 
+
+    }
+    #fnsz{
+      font-size: 1.5rem;
+    }
+   h1, h2{
+    margin-left: 40px; 
+   }
+    /* #dogname {
+      font-size: 2rem;
+
+    } */
+    input{
+      margin-left: 40px; 
+    }
+    span{
+      font-weight:lighter;
+    }
+    p{
+      margin-left: 40px; 
+    }
+   
+    #dog-titles{
+      font-size: 1.2rem;
+      color:darkmagenta;
+      /* margin-left: 40px;  */
+    }
+
+    </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <h1 class="text-center">Dog App</h1><br>
+
+    <h2 class="text">Search for your favorite Dog</h2>
+    <form action="/search-dog" method="GET" onsubmit="validateForm()">
+      <input type="search" name="search" id="inputDogSearch" placeholder="Search Breed of Dog">
+      <button>Search</button>
+    </form>
+    <script>
+      function validateForm() {
+      
+        var dogsearchvalue = document.getElementById('inputDogSearch').value.trim();
+    
+        if (dogsearchvalue === '') {
+          alert('Oops you may have missed entering a dogs Breed');
+          return false; 
+        }
+          return true;
+      }
+    </script>
+    
+  
+  <% if (searchQuery ) { %>
+  
+    <p>
+      
+      <span>Dog Name:  </span> <span id="dog-titles"><%=DogName%></span>
+   
+    </p>
+    
+    <p>
+      
+      <span> Bred For: </span>   <span id="dog-titles"><%=bred%></span>
+    </p>
+
+    <p >
+      <span> BredGroup: </span>
+      <span id="dog-titles"><%=breedGroup%> </span>
+    </p>
+    
+    <p >
+      <span>Life Span: </span>
+      <span id="dog-titles"><%=LifeSpan%></span> 
+    </p>
+    
+    <p >
+      <span>Height:</span>
+      <span id="dog-titles"><%=height%>  </span>
+    </p>
+    
+    <p>
+    <span>Weight:</span>
+    <span id="dog-titles"><%=weight%>  </span>
+    </p>
+  
+    <p > 
+      <span> Temperament: </span> 
+      <span id="dog-titles"> <%=temp%></span>
+    </p>
+    
+    <div class="dog-pic">
+      <img class="dog-pic" src="<%=Pic%>">
+    </div>
+    
+    
+
+      <% } %>
+  </div>
+ </body>
+
+</html>
