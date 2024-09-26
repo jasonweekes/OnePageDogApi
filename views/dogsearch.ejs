@@ -60,7 +60,7 @@
   <div class="container">
     <h1 class="text-center">Dog App</h1><br>
 
-    <h2 class="text">Search for your favorite Dog</h2>
+    <h2 class="text">Search for your Type of Dog</h2>
     <form action="/search-dog" method="GET" onsubmit="validateForm()">
       <input type="search" name="search" id="inputDogSearch" placeholder="Search Breed of Dog">
       <button>Search</button>
@@ -68,10 +68,10 @@
     <script>
       function validateForm() {
       
-        var dogsearchvalue = document.getElementById('inputDogSearch').value.trim();
+        let dogsearchvalue = document.getElementById('inputDogSearch').value.trim();
     
         if (dogsearchvalue === '') {
-          alert('Oops you may have missed entering a dogs Breed');
+          alert('Oops you may have missed entering your Type of Dog');
           return false; 
         }
           return true;
